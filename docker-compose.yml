@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    pocketbase-litestream:
+        build:
+            context: .
+        ports:
+            - '8080:8080'
+        volumes:
+            - '${PWD}:/pb_data'
+        environment:
+            - 'LITESTREAM_ACCESS_KEY_ID=<>'
+            - 'LITESTREAM_SECRET_ACCESS_KEY=<>'

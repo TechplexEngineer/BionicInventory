@@ -6,7 +6,7 @@ ARG USERNAME=user
 RUN adduser -D $USERNAME
 
 ARG POCKETBASE_VERSION=0.2.8
-ARG LITESTREAM_VERSION=0.3.8
+ARG LITESTREAM_VERSION=0.3.9
 
 # Install the dependencies
 RUN apk add --no-cache \
@@ -32,10 +32,9 @@ ADD https://github.com/benbjohnson/litestream/releases/download/v${LITESTREAM_VE
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 
 # Notify Docker that the container wants to expose a port.
-# Pocketbase serve port 8090
-# For the litestream server via Prometheus 9090
+# Pocketbase serve port
 EXPOSE 8080
-EXPOSE 9090
+
 
 # Copy Litestream configuration file & startup script.
 COPY etc/litestream.yml /etc/litestream.yml

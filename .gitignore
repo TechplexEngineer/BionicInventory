@@ -1,1 +1,5 @@
 *.bak
+*.db
+*.db-shm
+*.db-wal
+.data.db-litestream

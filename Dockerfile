@@ -18,6 +18,7 @@ RUN apk add --no-cache \
     bash
 
 RUN mkdir -p /pb_data
+RUN chown $USERNAME:$USERNAME /pb_data
 
 # Download Pocketbase and install it for AMD64
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VERSION}/pocketbase_${POCKETBASE_VERSION}_linux_amd64.zip /tmp/pocketbase.zip
